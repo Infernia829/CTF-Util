@@ -9,3 +9,5 @@
  3. There is a built in donate cooldown timer that displayers on the right of your screen. Upon donating it counts down to when you can next donate.
 
  4. More features planned.
+
+ Please send me ideas for changes/features on discord: FlamingRCCars#3212
