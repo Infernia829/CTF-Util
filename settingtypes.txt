@@ -1,0 +1,11 @@
+#	Enable/Disable the donate counter
+donate_counter (Enable donate counter) bool true
+
+#	All player names are seperated by ",".
+ignore_list (Ignored players) string
+
+#	Enable/Disable the "CTFUtil" message that is displayed next to other ctf util users
+show_other_ctf_util_users (Show custom text next to other CTF Util users) bool true
+
+#	What to display next to users who are using CTF Util
+custom_message (Custom dispay text next to other CTF Util users) string CTFUtil
