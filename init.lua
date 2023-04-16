@@ -21,8 +21,6 @@ function check_ignorelist(message)
         search_string = "<" .. ignorelist[i] .. ">"
         if string.find(message, search_string) then
             return true
-        else
-            return false
         end
     end
     return false
