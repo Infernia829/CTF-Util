@@ -11,3 +11,5 @@
  4. More features planned.
 
  Please send me ideas for changes/features on discord: FlamingRCCars#3212
+
+Version for MineTest 5.6.0 and below: https://github.com/FlamingRCCars/CTF-Util-Legacy-Support
