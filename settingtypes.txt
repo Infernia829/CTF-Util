@@ -9,3 +9,12 @@ show_other_ctf_util_users (Show custom text next to other CTF Util users) bool t
 
 #	What to display next to users who are using CTF Util
 custom_message (Custom dispay text next to other CTF Util users) string CTFUtil
+
+#	Wether or not to display hit particles
+particles (Display hit particles) bool true
+
+#	Wether or not to display other players capture countdowns
+capture_counter (Display Capture Counter) bool true
+
+#	Wether or not to send welcome messages to other players
+welcome_messages (Send welcome messages) bool true
