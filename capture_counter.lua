@@ -12,7 +12,7 @@
 ---------------------------------------------------------------------------------
 
 minetest.register_chatcommand("toggle_capture_counter", {
-    params = "none",
+    params =  "",
     description = "Toggle the Capture Counter on or off.",
     func = function(params)
         local capture_counter = minetest.settings:get_bool("capture_counter")

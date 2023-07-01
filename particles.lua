@@ -12,8 +12,8 @@
 ---------------------------------------------------------------------------------
 
 minetest.register_chatcommand("toggle_particles", {
-    params = "none",
-    description = "Toggle particles on or off.",
+    params =  "",
+    description = "Toggle hit particles on or off.",
     func = function(params)
         local particles = minetest.settings:get_bool("particles")
         minetest.settings:set_bool("particles",  not particles)

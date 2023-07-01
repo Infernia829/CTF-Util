@@ -12,7 +12,7 @@
 ---------------------------------------------------------------------------------
 
 minetest.register_chatcommand("toggle_donate_counter", {
-    params = "none",
+    params =  "",
     description = "Toggle the Donate Counter on or off.",
     func = function(params)
         local donate_counter = minetest.settings:get_bool("donate_counter")

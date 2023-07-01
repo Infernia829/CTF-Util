@@ -12,7 +12,7 @@
 ---------------------------------------------------------------------------------
 
 minetest.register_chatcommand("toggle_welcome_messages", {
-    params = "none",
+    params =  "",
     description = "Toggle sending welcome messages on or off.",
     func = function(params)
         local welcome_messages = minetest.settings:get_bool("welcome_messages")
@@ -27,6 +27,7 @@ minetest.register_chatcommand("toggle_welcome_messages", {
 storage = core.get_mod_storage()
 minetest.register_chatcommand("welcome", {
     params = "<player_name>",
+    description = "Welcome a player when they join",
     func = function(message)
         temp_data = (storage:get_string("names"))
         data_list = temp_data:split(",")
@@ -49,6 +50,7 @@ minetest.register_chatcommand("welcome", {
 
 minetest.register_chatcommand("dont_welcome", {
     params = "<player_name>",
+    description = "Stop welcoming a player when they join.",
     func = function(message)
         if storage:get_string("names"):find(message) then
             storage:set_string("names",storage:get_string("names"):sub(1, storage:get_string("names"):find(message)-2) .. storage:get_string("names"):sub(storage:get_string("names"):find(message)+storage:get_string("names"):len(),-1))
@@ -61,6 +63,7 @@ minetest.register_chatcommand("dont_welcome", {
 
 minetest.register_chatcommand("set_welcome_message", {
     params = "<player> <message>",
+    description = "Set the welcome message for a specific player.",
     func = function(message)
         player = tostring(message:sub(1,message:find(" ")-1))
         storage:set_string(player,message:sub(message:find(" ")+1,-1))
@@ -69,9 +72,8 @@ minetest.register_chatcommand("set_welcome_message", {
 })
 
 minetest.register_chatcommand("reset_welcomes", {
-    privs = {
-        interact = true,
-    },
+    params =  "",
+    description = "Reset your welcome list.",
     func = function(message)
         temp_data = (storage:get_string("names"))
         data_list = temp_data:split(",")
@@ -83,13 +85,15 @@ minetest.register_chatcommand("reset_welcomes", {
 })
 
 minetest.register_chatcommand("list_welcomes", {
+    params =  "",
+    description = "List players to be welcomed.",
     func = function(message)
         minetest.display_chat_message(minetest.colorize("#FF5000", "Welcome names: " .. storage:get_string("names")))
     end,
 })
 
 
-core.register_on_receiving_chat_message(function(message)
+minetest.register_on_receiving_chat_message(function(message)
     if string.find(message, "***") and string.find(message, " joined the game.") and not (minetest.settings:get_bool("welcome_messages") == false) then
         local name = minetest.localplayer:get_name()
         start = (string.find(message, "*** "))
@@ -105,7 +109,7 @@ core.register_on_receiving_chat_message(function(message)
                indata = true
            end
         end
-        if indata == true and not(name == message)then
+        if indata == true and not(name == message) then
             minetest.display_chat_message(minetest.colorize("#FF5000", "Welcomed " .. message))
             temp_wb = "wb " .. message
             if not (storage:get_string(message) == "") then
@@ -114,7 +118,7 @@ core.register_on_receiving_chat_message(function(message)
             if storage:get_string(message):find("<name>") then
                 temp_wb = (storage:get_string(message):sub(1,storage:get_string(message):find("<name>")-1) .. message .. storage:get_string(message):sub(storage:get_string(message):find("<name>")+6,-1))
             end
-            core.send_chat_message(temp_wb)
+            say(temp_wb)
         message = ""
         end
     end
