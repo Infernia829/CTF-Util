@@ -23,7 +23,7 @@
 
  - Massive shoutout to @peace12345/Brain_Juice for supplying the chat welcome and capture counter scripts. 
 
- **Please send me ideas for changes/features on discord: *.flamingrccars***
+ **Please send me ideas for changes/features on discord: *@.flamingrccars***
  **Or Brain_Juice: *@peace12345***
 
 Version for MineTest 5.6.0 and below: https://github.com/FlamingRCCars/CTF-Util-Legacy-Support ( outdated )
