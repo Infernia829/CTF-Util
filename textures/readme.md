@@ -1,0 +1,1 @@
+Move the ` hit.png ` file into `textures > base > pack`
