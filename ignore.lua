@@ -11,7 +11,6 @@
 ------------   ▀   ▀▀▀ ▀ ▀ ▀ ▀ ▀▀▀ ▀ ▀ ▀▀▀ ▀ ▀ ▀▀▀ ▀▀▀ ▀ ▀ ▀ ▀ ▀▀▀   ------------
 ---------------------------------------------------------------------------------
 
-
 function check_ignorelist(message)
     local ignorelist = (minetest.settings:get("ignore_list") or ""):split(",")
     for i = 1, #ignorelist do

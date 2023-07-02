@@ -81,7 +81,7 @@ minetest.register_globalstep(function(dtime)
             end
         end
         
-        if screen_message and minetest.settings:get_bool("capture_counter") == true then
+        if screen_message and minetest.settings:get_bool("capture_counter") == true  and minetest.localplayer then
             if hud then
                 minetest.localplayer:hud_change(hud, "text", minetest.colorize("orange", screen_message))
             else
