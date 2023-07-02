@@ -8,16 +8,19 @@ dofile(core.get_modpath(modname) .. "ignore.lua")
 dofile(core.get_modpath(modname) .. "help.lua")
 
 minetest.register_on_sending_chat_message(function(message)
-    say(message)
+    return say(message)
 end)
 
 function say(message)
     if string.sub(message, 1, 1) ~= "/" then
         message = message .. string.char(127)
+    else
+        return false
     end
     minetest.send_chat_message(message)
     if minetest.get_server_info().protocol_version < 29 then
         local name = minetest.localplayer:get_name()
         minetest.display_chat_message("<"..name.."> " .. message)
     end
+    return true
 end
