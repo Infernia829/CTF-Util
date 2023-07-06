@@ -31,7 +31,9 @@ minetest.register_on_receiving_chat_message(function(message)
             if minetest.settings:get_bool("show_other_ctf_util_users") == true then
                 if string.find(message, string.char(127)) then
                     custom = minetest.settings:get("custom_message")
-                    print(minetest.colorize("#FF5000", custom .. " ") .. message)
+					if custom then
+                    	minetest.display_chat_message(minetest.colorize("#FF5000", custom .. " ") .. message)
+					end
                     return true
                 end
             end
