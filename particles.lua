@@ -25,6 +25,9 @@ minetest.register_chatcommand("toggle_particles", {
 })
 
 function register_hits()
+	if not minetest.localplayer then
+		return false
+	end
     if minetest.localplayer:get_control().dig and not lmbpress then
         lmbpress = true
         local player_pos = core.camera:get_pos()
