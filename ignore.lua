@@ -59,6 +59,9 @@ minetest.register_chatcommand("unblock", {
         if message then
             local found_name = false
             local str = minetest.settings:get("ignore_list")
+			if not str then
+				str = ""
+			end
             local str_table = str:split(",")
             for i, name in ipairs(str_table) do
                 if name == message then
