@@ -38,7 +38,7 @@ function register_hits()
             local other_pos = vector.add(pointed_thing.intersection_point, vector.new(0.2, 0.4, 0.2))
             if pointed_thing.type == "object" then
                 minetest.add_particlespawner({
-                    amount = 75,
+                    amount = tonumber(minetest.settings:get("particle_amount")),
                     time = 0.1,
                     minpos = new_pos,
                     maxpos = other_pos,

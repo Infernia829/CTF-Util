@@ -18,3 +18,6 @@ capture_counter (Display Capture Counter) bool true
 
 #	Wether or not to send welcome messages to other players
 welcome_messages (Send welcome messages) bool true
+
+#	Amount of particles to display when hitting objects
+particle_amount (Amount of particles) int 75
