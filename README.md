@@ -4,6 +4,8 @@
 
  - You can block players using .block and .unblock
 
+ - You can use .xray_find <node name> to find a specific node in your surroundings, and .xray_clear to hide the display.
+
  - You can see other people using the utility mod. This can be disabled in settings by changing the "Show custom text next to other CTF Util users" setting to false
 
  - There is a built in donate cooldown timer that displays on the right of your screen. Upon donating it counts down to when you can next donate.
