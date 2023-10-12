@@ -14,8 +14,7 @@
 function check_ignorelist(message)
     local ignorelist = (minetest.settings:get("ignore_list") or ""):split(",")
     for i = 1, #ignorelist do
-        search_string = "<" .. ignorelist[i] .. ">"
-        if string.find(message, search_string) then
+        if string.find(message, ignorelist[i]) then
             return true
         else
             return false
