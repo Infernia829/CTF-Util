@@ -20,7 +20,5 @@ function say(message)
         return false
     end
     minetest.send_chat_message(message)
-	local name = minetest.localplayer:get_name()
-	minetest.display_chat_message("<"..name.."> " .. message)
     return true
 end
